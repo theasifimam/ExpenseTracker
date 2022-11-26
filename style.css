@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(./bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Animation */
+
+:root {
+    --wrapper-width: 100%;
+    --wrapper-height: 100vh;
+    --dvd-width: 200px;
+    --dvd-height: 200px;
+    --transition: transform .7s linear;
+}
+
+
+.dvd-wrap {
+    position: relative;
+    margin: auto;
+    display: grid;
+    place-content: center;
+    width: var(--wrapper-width);
+    height: var(--wrapper-height);
+    /* background-color: #2a396b; */
+    overflow: hidden;
+    z-index: -1;
+}
+
+.dvd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--dvd-width);
+    height: var(--dvd-height);
+    background-color: blueviolet;
+}
+
+.dvd.round {
+    border-radius: 100%
+}
+
+.dvd.transition {
+    transition: var(--transition);
+    will-change: transform;
+}
+
+.dvd-wrap h1 {
+    font-size: 2rem;
+    color: blueviolet;
+    mix-blend-mode: hard-light;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    font-family: sans-serif;
+    /* -webkit-text-stroke: 1px blueviolet; */
+}
+
+/* end of animation  */
+
+
+.box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    min-height: 20rem;
+    max-height: 35rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 2rem;
+
+    backdrop-filter: blur(4px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    -webkit-backdrop-filter: blur(4px);
+    /* border-radius: 10px; */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.box>h1 {
+    color: blueviolet;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.historyBox>h3 {
+    color: rgb(166, 71, 255);
+    font-size: 1.5rem;
+    text-align: left;
+    /* margin: 0.5rem 0 0 1rem; */
+    margin-top: 1rem;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box>.input>input,
+.box>input {
+    border: none;
+    padding: 0.9rem 1rem;
+    background-color: rgb(240, 222, 255);
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 1rem;
+    width: 45%;
+}
+
+input::placeholder {
+    color: grey;
+}
+
+button {
+    width: 45%;
+    padding: 0.8rem 1rem;
+    background-color: blueviolet;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: 5ms ease-in-out;
+    background-color: rgb(114, 0, 222);
+}
+
+.totalAmountSpent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: blueviolet;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.historyBox {
+    width: 100%;
+    /* box-shadow: rgba(158, 54, 255, 0.525) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    /* border: 2px solid rgba(137, 43, 226, 0.158); */
+    border-radius: 15px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 15rem;
+    overflow: auto;
+    padding: .7rem 0;
+    border-radius: 10px;
+    background-color: transparent;
+
+}
+
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+ul>li:nth-child(odd) {
+    background-color: rgb(124, 0, 240);
+}
+
+ul>li:nth-child(even) {
+    background-color: rgb(151, 65, 227);
+}
+
+ul>li {
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+ul>li>span {
+    width: 33%;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circleThree {
+    width: 350px;
+    height: 350px;
+    top: -30%;
+    z-index: -1;
+    right: 60%;
+    background: rgb(158, 54, 255);
+}
+
+.circleFour {
+    width: 350px;
+    height: 350px;
+    bottom: -30%;
+    z-index: -12;
+    right: 14%;
+    background: blueviolet;
+}
